@@ -92,7 +92,7 @@ def get_passageiro(query: PassageiroBuscaSchema):
     Retorna uma representação dos passageiros e contatos associados.
     """
     passageiro_cpf = query.cpf
-    logger.debug(f"Coletando dados sobre produto #{produto_nome}")
+    logger.debug(f"Coletando dados sobre produto #{passageiro_cpf}")
     # criando conexão com a base
     session = Session()
     # fazendo a busca
@@ -112,27 +112,27 @@ def get_passageiro(query: PassageiroBuscaSchema):
 @app.delete('/passageiro', tags=[passageiro_tag],
             responses={"200": PassageiroDelSchema, "404": ErrorSchema})
 def del_passageiro(query: PassageiroBuscaSchema):
-    """Deleta um Passageiro a partir do nome de passageiro informado
+    """Deleta um Passageiro a partir do cpf passageiro informado
 
     Retorna uma mensagem de confirmação da remoção.
     """
-    passageiro_nome = unquote(unquote(query.nome))
-    print(passageiro_nome)
-    logger.debug(f"Deletando dados sobre passageiro #{passageiro_nome}")
+    passageiro_cpf = unquote(unquote(query.cpf))
+    print(passageiro_cpf)
+    logger.debug(f"Deletando dados sobre passageiro #{passageiro_cpf}")
     # criando conexão com a base
     session = Session()
     # fazendo a remoção
-    count = session.query(Passageiro).filter(Passageiro.nome == passageiro_nome).delete()
+    count = session.query(Passageiro).filter(Passageiro.cpf == passageiro_cpf).delete()
     session.commit()
 
     if count:
         # retorna a representação da mensagem de confirmação
-        logger.debug(f"Deletado passageiro #{passageiro_nome}")
-        return {"mesage": "Passageiro removido", "id": passageiro_nome}
+        logger.debug(f"Deletado passageiro #{passageiro_cpf}")
+        return {"mesage": "Passageiro removido", "id": passageiro_cpf}
     else:
         # se o passageiro não foi encontrado
         error_msg = "Passageiro não encontrado na base :/"
-        logger.warning(f"Erro ao deletar passageiro #'{passageiro_nome}', {error_msg}")
+        logger.warning(f"Erro ao deletar passageiro #'{passageiro_cpf}', {error_msg}")
         return {"mesage": error_msg}, 404
 
 

@@ -19,7 +19,7 @@ class Contato(Base):
     # um passageiro ao contato.
     passageiro = Column(Integer, ForeignKey("passageiro.pk_passageiro"), nullable=False)
 
-    def __init__(self, texto:str, data_insercao:Union[DateTime, None] = None):
+    def __init__(self, telefone:str, tipo:str, data_insercao:Union[DateTime, None] = None):
         """
         Cria um Contato
 
@@ -28,6 +28,7 @@ class Contato(Base):
             data_insercao: data de quando o contato foi informado ou inserido
                            à base
         """
-        self.texto = texto
+        self.telefone = telefone
+        self.tipo=tipo
         if data_insercao:
             self.data_insercao = data_insercao

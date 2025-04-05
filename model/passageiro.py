@@ -11,7 +11,7 @@ class Passageiro(Base):
 
     id = Column("pk_passageiro", Integer, primary_key=True)
     nome = Column(String(140))
-    cpf= Column(Integer),unique=True)
+    cpf= Column(String,unique=True)
     peso = Column(Float)
     data_insercao = Column(DateTime, default=datetime.now())
 
@@ -34,7 +34,7 @@ class Passageiro(Base):
         """
         self.nome = nome
         self.cpf= cpf
-        self.pesso= peso
+        self.peso= peso
 
         # se não for informada, será o data exata da inserção no banco
         if data_insercao:
