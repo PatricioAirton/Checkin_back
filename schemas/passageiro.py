@@ -25,6 +25,14 @@ class ListagemPassageirosSchema(BaseModel):
     """
     passageiro:List[PassageiroSchema]
 
+class PassageiroUpdateSchema(BaseModel):
+    """ Define como um passageiro a ser atualizado deve ser representado
+    """
+    id: int =1
+    nome: str = "Joao da Silva"
+    cpf: str = "433.345.437-26"
+    peso: float = 72.50
+
 
 def apresenta_passageiros(passageiros: List[Passageiro]):
     """ Retorna uma representação do produto seguindo o schema definido em

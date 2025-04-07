@@ -25,6 +25,39 @@ def home():
     """
     return redirect('/openapi')
 
+@app.put('/passageiro', tags=[passageiro_tag],
+          responses={"200": PassageiroViewSchema, "409": ErrorSchema, "400": ErrorSchema})
+def update_passageiro(form: PassageiroUpdateSchema):
+    """Atualiza um Passageiro a partir do ID do passageiro informado
+
+    Retorna uma mensagem de confirmação de atualização.
+    """
+    passageiro = Passageiro(
+        id=form.id,
+        nome=form.nome,
+        cpf=form.cpf,
+        peso=form.peso)
+    
+    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
+    
+        # criando conexão com a base
+    session = Session()
+        # atualizando o nome do passageiro
+    count= session.query(Passageiro).filter(Passageiro.id==passageiro.id).update({'nome': passageiro.nome, 'cpf': passageiro.cpf, 'peso': passageiro.peso})
+    session.commit()
+        # efetuando a busca
+    passageiro= session.query(passageiro).filter(Passageiro.id==passageiro.id).first()
+
+    if count:
+        # retorna a representação da mensagem de confirmação
+        logger.debug(f"Atualizado o passageiro pelo id #{passageiro.id}")
+        return apresenta_passageiro(passageiro), 200
+    else:
+        # se o id não foi encontrado
+        error_msg = "Id não encontrado na base :/"
+        logger.warning(f"Erro ao atualizar passageiro pelo id #'{passageiro.id}', {error_msg}")
+        return {"mesage": error_msg}, 404
+
 
 @app.post('/passageiro', tags=[passageiro_tag],
           responses={"200": PassageiroViewSchema, "409": ErrorSchema, "400": ErrorSchema})
