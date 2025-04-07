@@ -37,7 +37,7 @@ def update_passageiro(form: PassageiroUpdateSchema):
     passageiro_cpf=form.cpf
     passageiro_peso=form.peso
     
-    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
+    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro_nome}', '{passageiro_cpf}','{passageiro_peso}'")
     
         # criando conexão com a base
     session = Session()

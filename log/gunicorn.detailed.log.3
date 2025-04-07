@@ -1,15 +1,12 @@
-[2025-04-05 18:34:09,512] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:34:09] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:34:09,571] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:34:09] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:35:11,893] WARNING add_passageiro() L60   Erro ao adicionar passageiro 'Juca da Silva', Não foi possível salvar novo item :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L60  
-[2025-04-05 18:35:11,894] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:35:11] "[31m[1mPOST /passageiro HTTP/1.1[0m" 400 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:39:05,255] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2025-04-05 18:44:56,174] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5001
  * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:39:05,255] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:39:32,438] WARNING add_passageiro() L60   Erro ao adicionar passageiro 'Juca da Silva', Não foi possível salvar novo item :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L60  
-[2025-04-05 18:39:32,439] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:39:32] "[31m[1mPOST /passageiro HTTP/1.1[0m" 400 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:40:15,565] ERROR log_exception() L875  Exception on /passageiro [GET] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-05 18:44:56,174] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:45:04,014] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:45:04] "GET /passageiro?cpf=000.111.222-44 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:45:50,898] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:45:50] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:46:40,674] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:46:40] "GET /passageiro?cpf=000.111.222-33 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:47:07,992] ERROR log_exception() L875  Exception on /passageiro [DELETE] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,12 +26,12 @@ Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 95, in get_passageiro
-    logger.debug(f"Coletando dados sobre produto #{produto_nome}")
-                                                   ^^^^^^^^^^^^
-NameError: name 'produto_nome' is not defined
-[2025-04-05 18:40:15,575] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:40:15] "[35m[1mGET /passageiro?cpf=000.111.222-44 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:40:36,995] ERROR log_exception() L875  Exception on /passageiro [GET] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 135, in del_passageiro
+    logger.warning(f"Erro ao deletar passageiro #'{passageiro_nome}', {error_msg}")
+                                                   ^^^^^^^^^^^^^^^
+NameError: name 'passageiro_nome' is not defined. Did you mean: 'passageiro_cpf'?
+[2025-04-05 18:47:08,003] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:47:08] "[35m[1mDELETE /passageiro?cpf=000.111.222-33 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:47:33,463] ERROR log_exception() L875  Exception on /passageiro [DELETE] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -54,17 +51,19 @@ Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 95, in get_passageiro
-    logger.debug(f"Coletando dados sobre produto #{produto_nome}")
-                                                   ^^^^^^^^^^^^
-NameError: name 'produto_nome' is not defined
-[2025-04-05 18:40:37,002] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:40:37] "[35m[1mGET /passageiro?cpf=000.111.222-44 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:42:46,631] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 135, in del_passageiro
+    logger.warning(f"Erro ao deletar passageiro #'{passageiro_nome}', {error_msg}")
+                                                   ^^^^^^^^^^^^^^^
+NameError: name 'passageiro_nome' is not defined. Did you mean: 'passageiro_cpf'?
+[2025-04-05 18:47:33,470] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:47:33] "[35m[1mDELETE /passageiro?cpf=000.111.222-33 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:49:41,809] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5001
  * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:42:46,631] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:43:02,714] ERROR log_exception() L875  Exception on /passageiro [GET] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-05 18:49:41,809] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:49:50,135] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:49:50] "DELETE /passageiro?cpf=000.111.222-33 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:50:45,040] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:50:45] "GET /passageiros HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:52:13,551] ERROR log_exception() L875  Exception on /contato [POST] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -84,11 +83,12 @@ Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 109, in get_passageiro
-    return apresenta_passageiro(passageiro), 200
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/schemas/passageiro.py", line 69, in apresenta_passageiro
-    "cpf": passageiro.quantidade,
-           ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Passageiro' object has no attribute 'quantidade'
-[2025-04-05 18:43:02,723] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:43:02] "[35m[1mGET /passageiro?cpf=000.111.222-44 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 160, in add_contato
+    contato = Contato(
+              ^^^^^^^^
+TypeError: __init__() got an unexpected keyword argument 'telefone'
+[2025-04-05 18:52:13,556] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:52:13] "[35m[1mPOST /contato HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-05 18:56:17,536] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
