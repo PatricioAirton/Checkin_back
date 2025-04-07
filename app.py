@@ -32,30 +32,29 @@ def update_passageiro(form: PassageiroUpdateSchema):
 
     Retorna uma mensagem de confirmação de atualização.
     """
-    passageiro = Passageiro(
-        id=form.id,
-        nome=form.nome,
-        cpf=form.cpf,
-        peso=form.peso)
+    passageiro_id= form.id
+    passageiro_nome=form.nome
+    passageiro_cpf=form.cpf
+    passageiro_peso=form.peso
     
     logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
     
         # criando conexão com a base
     session = Session()
         # atualizando o nome do passageiro
-    count= session.query(Passageiro).filter(Passageiro.id==passageiro.id).update({'nome': passageiro.nome, 'cpf': passageiro.cpf, 'peso': passageiro.peso})
+    count= session.query(Passageiro).filter(Passageiro.id==passageiro_id).update({'nome': passageiro_nome, 'cpf': passageiro_cpf, 'peso': passageiro_peso})
     session.commit()
         # efetuando a busca
-    passageiro= session.query(passageiro).filter(Passageiro.id==passageiro.id).first()
+    passageiro= session.query(Passageiro).filter(Passageiro.id==passageiro_id).first()
 
     if count:
         # retorna a representação da mensagem de confirmação
-        logger.debug(f"Atualizado o passageiro pelo id #{passageiro.id}")
+        logger.debug(f"Atualizado o passageiro pelo id #{passageiro_id}")
         return apresenta_passageiro(passageiro), 200
     else:
         # se o id não foi encontrado
         error_msg = "Id não encontrado na base :/"
-        logger.warning(f"Erro ao atualizar passageiro pelo id #'{passageiro.id}', {error_msg}")
+        logger.warning(f"Erro ao atualizar passageiro pelo id #'{passageiro_id}', {error_msg}")
         return {"mesage": error_msg}, 404
 
 
@@ -65,7 +64,7 @@ def add_passageiro(form: PassageiroSchema):
     """Adiciona um novo Passageiro à base de dados
 
     Retorna uma representação dos passageiros e contatos associados.
-    """
+    """ 
     passageiro = Passageiro(
         nome=form.nome,
         cpf=form.cpf,
