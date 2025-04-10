@@ -15,8 +15,8 @@ CORS(app)
 
 # definindo tags
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
-passageiro_tag = Tag(name="Passageiro", description="Adição, visualização e remoção de passageiros à base")
-contato_tag = Tag(name="Contato", description="Adição de um contato à um passageiro cadastrado na base")
+passageiro_tag = Tag(name="Passageiro", description="Adição, visualização, atualização e remoção de passageiros à base")
+contato_tag = Tag(name="Contato", description="Adição de um contato a um passageiro cadastrado na base")
 
 
 @app.get('/', tags=[home_tag])
@@ -25,38 +25,6 @@ def home():
     """
     return redirect('/openapi')
 
-@app.put('/passageiro', tags=[passageiro_tag],
-          responses={"200": PassageiroViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def update_passageiro(form: PassageiroUpdateSchema):
-    """Atualiza um Passageiro a partir do ID do passageiro informado
-
-    Retorna uma mensagem de confirmação de atualização.
-    """
-    passageiro_id= form.id
-    passageiro_nome=form.nome
-    passageiro_cpf=form.cpf
-    passageiro_peso=form.peso
-    
-    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro_nome}', '{passageiro_cpf}','{passageiro_peso}'")
-    
-        # criando conexão com a base
-    session = Session()
-        # atualizando o nome do passageiro
-    count= session.query(Passageiro).filter(Passageiro.id==passageiro_id).update({'nome': passageiro_nome, 'cpf': passageiro_cpf, 'peso': passageiro_peso})
-    session.commit()
-        # efetuando a busca
-    passageiro= session.query(Passageiro).filter(Passageiro.id==passageiro_id).first()
-
-    if count:
-        # retorna a representação da mensagem de confirmação
-        logger.debug(f"Atualizado o passageiro pelo id #{passageiro_id}")
-        return apresenta_passageiro(passageiro), 200
-    else:
-        # se o id não foi encontrado
-        error_msg = "Id não encontrado na base :/"
-        logger.warning(f"Erro ao atualizar passageiro pelo id #'{passageiro_id}', {error_msg}")
-        return {"mesage": error_msg}, 404
-
 
 @app.post('/passageiro', tags=[passageiro_tag],
           responses={"200": PassageiroViewSchema, "409": ErrorSchema, "400": ErrorSchema})
@@ -64,33 +32,33 @@ def add_passageiro(form: PassageiroSchema):
     """Adiciona um novo Passageiro à base de dados
 
     Retorna uma representação dos passageiros e contatos associados.
-    """ 
+    """
     passageiro = Passageiro(
         nome=form.nome,
         cpf=form.cpf,
-        peso=form.peso)
+        flight=form.flight)
     logger.debug(f"Adicionando passageiro de nome e cpf: '{passageiro.nome}', '{passageiro.cpf}'")
     try:
         # criando conexão com a base
         session = Session()
-        # adicionando passageiro
+        # adicionando produto
         session.add(passageiro)
         # efetivando o camando de adição de novo item na tabela
         session.commit()
-        logger.debug(f"Adicionado passageiro de nome: '{passageiro.nome}'")
+        logger.debug(f"Adicionado passageiro de nome e cpf: '{passageiro.nome}', '{passageiro.cpf}'")
         return apresenta_passageiro(passageiro), 200
 
     except IntegrityError as e:
-        # como a duplicidade do cpf é a provável razão do IntegrityError
+        # como a duplicidade de cpf é a provável razão do IntegrityError
         error_msg = "Passageiro de mesmo cpf já salvo na base :/"
-        logger.warning(f"Erro ao adicionar passageiro '{passageiro.cpf}', {error_msg}")
-        return {"mesage": error_msg}, 409
+        logger.warning(f"Erro ao adicionar passageiro:'{passageiro.nome}', '{passageiro.cpf}', {error_msg}")
+        return {"message": error_msg}, 409
 
     except Exception as e:
         # caso um erro fora do previsto
         error_msg = "Não foi possível salvar novo item :/"
-        logger.warning(f"Erro ao adicionar passageiro '{passageiro.nome}', {error_msg}")
-        return {"mesage": error_msg}, 400
+        logger.warning(f"Erro ao adicionar passageiro '{passageiro.nome}', '{passageiro.cpf}', {error_msg}")
+        return {"message": error_msg}, 400
 
 
 @app.get('/passageiros', tags=[passageiro_tag],
@@ -110,7 +78,7 @@ def get_passageiros():
         # se não há passageiros cadastrados
         return {"passageiros": []}, 200
     else:
-        logger.debug(f"%d rodutos econtrados" % len(passageiros))
+        logger.debug(f"%d passageiros econtrados" % len(passageiros))
         # retorna a representação de passageiro
         print(passageiros)
         return apresenta_passageiros(passageiros), 200
@@ -124,27 +92,57 @@ def get_passageiro(query: PassageiroBuscaSchema):
     Retorna uma representação dos passageiros e contatos associados.
     """
     passageiro_cpf = query.cpf
-    logger.debug(f"Coletando dados sobre produto #{passageiro_cpf}")
+    logger.debug(f"Coletando dados sobre passageiro #{passageiro_cpf}")
     # criando conexão com a base
     session = Session()
     # fazendo a busca
     passageiro = session.query(Passageiro).filter(Passageiro.cpf == passageiro_cpf).first()
 
-    if not Passageiro:
+    if not passageiro:
         # se o passageiro não foi encontrado
         error_msg = "Passageiro não encontrado na base :/"
         logger.warning(f"Erro ao buscar passageiro '{passageiro_cpf}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        return {"message": error_msg}, 404
     else:
         logger.debug(f"Passageiro econtrado: '{passageiro.cpf}'")
-        # retorna a representação de produto
+        # retorna a representação de passageiro
         return apresenta_passageiro(passageiro), 200
 
+@app.put('/passageiro', tags=[passageiro_tag],
+            responses={"200": PassageiroViewSchema, "404": ErrorSchema})
+def update_passageiro(form: PassageiroUpdateSchema):
+    """Atualiza um Passageiro a partir do id de passageiro informado
+
+    Retorna uma mensagem de confirmação da atualização.
+    """
+    passageiro_id  = form.id
+    passageiro_nome  = form.nome
+    passageiro_cpf  = form.cpf
+    passageiro_flight  = form.flight
+    
+    logger.debug(f"Atualizando passageiro de cpf: '{passageiro_cpf}'")
+    # criando conexão com a base
+    session = Session()
+    # fazendo a atualizacao
+    count = session.query(Passageiro).filter(Passageiro.id == passageiro_id).update({'nome': passageiro_nome, 'cpf': passageiro_cpf, 'flight': passageiro_flight})
+    session.commit()
+    # fazendo a busca
+    passageiro = session.query(Passageiro).filter(Passageiro.id == passageiro_id).first()
+
+    if count:
+        # retorna a representação da mensagem de confirmação
+        logger.debug(f"Atualizado passageiro #{passageiro_id}")
+        return apresenta_passageiro(passageiro), 200
+    else:
+        # se o passageiro não foi encontrado
+        error_msg = "Passageiro não encontrado na base :/"
+        logger.warning(f"Erro ao atualizar passageiro #'{passageiro_id}', {error_msg}")
+        return {"message": error_msg}, 404
 
 @app.delete('/passageiro', tags=[passageiro_tag],
             responses={"200": PassageiroDelSchema, "404": ErrorSchema})
 def del_passageiro(query: PassageiroBuscaSchema):
-    """Deleta um Passageiro a partir do cpf passageiro informado
+    """Deleta um Passageiro a partir do cpf do passageiro informado
 
     Retorna uma mensagem de confirmação da remoção.
     """
@@ -160,23 +158,23 @@ def del_passageiro(query: PassageiroBuscaSchema):
     if count:
         # retorna a representação da mensagem de confirmação
         logger.debug(f"Deletado passageiro #{passageiro_cpf}")
-        return {"mesage": "Passageiro removido", "id": passageiro_cpf}
+        return {"message": "Passageiro removido", "id": passageiro_cpf}
     else:
         # se o passageiro não foi encontrado
         error_msg = "Passageiro não encontrado na base :/"
         logger.warning(f"Erro ao deletar passageiro #'{passageiro_cpf}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        return {"message": error_msg}, 404
 
 
 @app.post('/contato', tags=[contato_tag],
           responses={"200": PassageiroViewSchema, "404": ErrorSchema})
 def add_contato(form: ContatoSchema):
-    """Adiciona de um novo contato à um passageiro cadastrado na base identificado pelo id
+    """Adiciona de um novo contato a um passageiro cadastrado na base identificado pelo id
 
     Retorna uma representação dos passageiros e contatos associados.
     """
     passageiro_id  = form.passageiro_id
-    logger.debug(f"Adicionando conattos ao produto #{passageiro_id}")
+    logger.debug(f"Adicionando contato ao passageiro #{passageiro_id}")
     # criando conexão com a base
     session = Session()
     # fazendo a busca pelo passageiro
@@ -186,19 +184,18 @@ def add_contato(form: ContatoSchema):
         # se passageiro não encontrado
         error_msg = "Passageiro não encontrado na base :/"
         logger.warning(f"Erro ao adicionar contato ao passageiro '{passageiro_id}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        return {"message": error_msg}, 404
 
     # criando o contato
     contato = Contato(
         telefone=form.telefone,
         tipo=form.tipo)
-        
-   
+
     # adicionando o contato ao passageiro
     passageiro.adiciona_contato(contato)
     session.commit()
 
     logger.debug(f"Adicionado contato ao passageiro #{passageiro_id}")
 
-    # retorna a representação de produto
+    # retorna a representação de passageiro
     return apresenta_passageiro(passageiro), 200

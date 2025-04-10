@@ -11,17 +11,17 @@ class Passageiro(Base):
 
     id = Column("pk_passageiro", Integer, primary_key=True)
     nome = Column(String(140))
-    cpf= Column(String,unique=True)
-    peso = Column(Float)
+    cpf = Column(String(14), unique=True)
+    flight = Column(String(8))
     data_insercao = Column(DateTime, default=datetime.now())
 
-    # Definição do relacionamento entre o passageiro e o contato do mesmo.
+    # Definição do relacionamento entre o passageiro e o contato.
     # Essa relação é implicita, não está salva na tabela 'passageiro',
     # mas aqui estou deixando para SQLAlchemy a responsabilidade
     # de reconstruir esse relacionamento.
     contatos = relationship("Contato")
 
-    def __init__(self, nome:str, cpf:int, peso:float,
+    def __init__(self, nome:str, cpf:str, flight:str,
                  data_insercao:Union[DateTime, None] = None):
         """
         Cria um Passageiro
@@ -33,15 +33,15 @@ class Passageiro(Base):
             data_insercao: data de quando o passageiro foi inserido à base
         """
         self.nome = nome
-        self.cpf= cpf
-        self.peso= peso
+        self.cpf = cpf
+        self.flight = flight
 
         # se não for informada, será o data exata da inserção no banco
         if data_insercao:
             self.data_insercao = data_insercao
 
     def adiciona_contato(self, contato:Contato):
-        """ Adiciona um novo contato do Passageiro
+        """ Adiciona um novo Contato do Passageiro
         """
         self.contatos.append(contato)
 

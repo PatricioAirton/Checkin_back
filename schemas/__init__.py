@@ -1,5 +1,5 @@
 from schemas.contatos import ContatoSchema
 from schemas.passageiro import PassageiroSchema, PassageiroBuscaSchema, PassageiroViewSchema, \
-                            ListagemPassageirosSchema, PassageiroDelSchema, apresenta_passageiro, \
-                            apresenta_passageiros, PassageiroUpdateSchema
+                            ListagemPassageirosSchema, PassageiroUpdateSchema, PassageiroDelSchema, apresenta_passageiros, \
+                            apresenta_passageiro
 from schemas.error import ErrorSchema
