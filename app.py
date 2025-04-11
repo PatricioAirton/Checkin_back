@@ -1,5 +1,5 @@
 from flask_openapi3 import OpenAPI, Info, Tag
-from flask import redirect
+from flask import redirect, request, jsonify
 from urllib.parse import unquote
 
 from sqlalchemy.exc import IntegrityError
@@ -26,22 +26,26 @@ def home():
     return redirect('/openapi')
 
 
-@app.post('/passageiro', tags=[passageiro_tag],
+@app.post('/passageiro', tags=[passageiro_tag], 
           responses={"200": PassageiroViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-def add_passageiro(form: PassageiroSchema):
+def add_passageiro(body:PassageiroSchema): 
     """Adiciona um novo Passageiro à base de dados
 
     Retorna uma representação dos passageiros e contatos associados.
     """
+
+    data= request.get_json();    
     passageiro = Passageiro(
-        nome=form.nome,
-        cpf=form.cpf,
-        flight=form.flight)
-    logger.debug(f"Adicionando passageiro de nome e cpf: '{passageiro.nome}', '{passageiro.cpf}'")
+        nome=data.get("nome"),
+        cpf=data.get("cpf"),
+        flight=data.get("flight")
+    )
+
+    
     try:
         # criando conexão com a base
         session = Session()
-        # adicionando produto
+        # adicionando passageiro
         session.add(passageiro)
         # efetivando o camando de adição de novo item na tabela
         session.commit()
@@ -110,15 +114,17 @@ def get_passageiro(query: PassageiroBuscaSchema):
 
 @app.put('/passageiro', tags=[passageiro_tag],
             responses={"200": PassageiroViewSchema, "404": ErrorSchema})
-def update_passageiro(form: PassageiroUpdateSchema):
+def update_passageiro(body:PassageiroUpdateSchema): 
     """Atualiza um Passageiro a partir do id de passageiro informado
 
     Retorna uma mensagem de confirmação da atualização.
     """
-    passageiro_id  = form.id
-    passageiro_nome  = form.nome
-    passageiro_cpf  = form.cpf
-    passageiro_flight  = form.flight
+    data= request.get_json();
+    
+    passageiro_id  = data.get("id")
+    passageiro_nome  = data.get("nome")
+    passageiro_cpf  = data.get("cpf")
+    passageiro_flight  = data.get("flight")
     
     logger.debug(f"Atualizando passageiro de cpf: '{passageiro_cpf}'")
     # criando conexão com a base
@@ -168,12 +174,15 @@ def del_passageiro(query: PassageiroBuscaSchema):
 
 @app.post('/contato', tags=[contato_tag],
           responses={"200": PassageiroViewSchema, "404": ErrorSchema})
-def add_contato(form: ContatoSchema):
+def add_contato(body:ContatoSchema): 
     """Adiciona de um novo contato a um passageiro cadastrado na base identificado pelo id
 
     Retorna uma representação dos passageiros e contatos associados.
     """
-    passageiro_id  = form.passageiro_id
+    data= request.get_json();
+    
+    passageiro_id  = data.get("passageiro_id")
+
     logger.debug(f"Adicionando contato ao passageiro #{passageiro_id}")
     # criando conexão com a base
     session = Session()
@@ -188,8 +197,8 @@ def add_contato(form: ContatoSchema):
 
     # criando o contato
     contato = Contato(
-        telefone=form.telefone,
-        tipo=form.tipo)
+        telefone=data.get("telefone"),
+        tipo=data.get("tipo"))
 
     # adicionando o contato ao passageiro
     passageiro.adiciona_contato(contato)
