@@ -1,12 +1,13 @@
-[2025-04-05 18:44:56,174] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5001
- * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:44:56,174] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:45:04,014] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:45:04] "GET /passageiro?cpf=000.111.222-44 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:45:50,898] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:45:50] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:46:40,674] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:46:40] "GET /passageiro?cpf=000.111.222-33 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:47:07,992] ERROR log_exception() L875  Exception on /passageiro [DELETE] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-11 22:46:59,866] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: passageiro.cpf
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -26,69 +27,56 @@ Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 135, in del_passageiro
-    logger.warning(f"Erro ao deletar passageiro #'{passageiro_nome}', {error_msg}")
-                                                   ^^^^^^^^^^^^^^^
-NameError: name 'passageiro_nome' is not defined. Did you mean: 'passageiro_cpf'?
-[2025-04-05 18:47:08,003] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:47:08] "[35m[1mDELETE /passageiro?cpf=000.111.222-33 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:47:33,463] ERROR log_exception() L875  Exception on /passageiro [DELETE] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
-Traceback (most recent call last):
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 135, in del_passageiro
-    logger.warning(f"Erro ao deletar passageiro #'{passageiro_nome}', {error_msg}")
-                                                   ^^^^^^^^^^^^^^^
-NameError: name 'passageiro_nome' is not defined. Did you mean: 'passageiro_cpf'?
-[2025-04-05 18:47:33,470] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:47:33] "[35m[1mDELETE /passageiro?cpf=000.111.222-33 HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:49:41,809] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5001
- * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:49:41,809] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:49:50,135] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:49:50] "DELETE /passageiro?cpf=000.111.222-33 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:50:45,040] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:50:45] "GET /passageiros HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:52:13,551] ERROR log_exception() L875  Exception on /contato [POST] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
-Traceback (most recent call last):
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 160, in add_contato
-    contato = Contato(
-              ^^^^^^^^
-TypeError: __init__() got an unexpected keyword argument 'telefone'
-[2025-04-05 18:52:13,556] INFO _log() L97   127.0.0.1 - - [05/Apr/2025 18:52:13] "[35m[1mPOST /contato HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-05 18:56:17,536] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5001
- * Running on http://192.168.0.61:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 133, in update_passageiro
+    count = session.query(Passageiro).filter(Passageiro.id == passageiro_id).update({'nome': passageiro_nome, 'cpf': passageiro_cpf, 'flight': passageiro_flight})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 3300, in update
+    result: CursorResult[Any] = self.session.execute(
+                                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/bulk_persistence.py", line 1648, in orm_execute_statement
+    return super().orm_execute_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: passageiro.cpf
+[SQL: UPDATE passageiro SET nome=?, cpf=?, flight=? WHERE passageiro.pk_passageiro = ?]
+[parameters: ('Joao da Silva', '433.345.437-26', 'TAM-1234', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-04-11 22:46:59,903] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:46:59] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 22:48:44,244] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:48:44] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 22:49:46,848] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:49:46] "OPTIONS /passageiro?cpf=076399657-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 22:49:46,865] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:49:46] "DELETE /passageiro?cpf=076399657-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 22:51:10,865] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:51:10] "DELETE /passageiro?cpf=433.345.437-26 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:03:54,853] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:03:54] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:04:54,362] WARNING update_passageiro() L145  Erro ao atualizar passageiro #'1', Passageiro não encontrado na base :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L145 
+[2025-04-11 23:04:54,363] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:04:54] "[33mPUT /passageiro HTTP/1.1[0m" 404 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:06:03,441] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:06:03] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:07:23,909] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:07:23] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:07:23,919] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:07:23] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  

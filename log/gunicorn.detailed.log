@@ -1,39 +1,72 @@
-[2025-04-11 00:56:47,363] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:47] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:47,374] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:47] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:47,385] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:47] "GET /openapi/ HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:47,394] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:47] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:54,830] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:54] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:54,833] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:54] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:54,834] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:54] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:54,836] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:54] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:56:54,969] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:56:54] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 00:57:47,384] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 00:57:47] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:57:38,733] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5001
- * Running on http://192.168.15.8:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:57:38,733] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:03,095] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:03] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:03,104] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:03] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:03,118] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:03] "GET /openapi/ HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:03,130] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:03] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,974] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,978] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,978] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,980] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,985] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,986] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:10,987] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:10] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:58:11,118] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:58:11] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:59:07,924] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:59:07] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 08:59:48,068] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 08:59:48] "GET /passageiros HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:02:06,563] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:02:06] "OPTIONS /passageiro?cpf=421.345.437-26 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:02:06,586] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:02:06] "DELETE /passageiro?cpf=421.345.437-26 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:02:41,951] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:02:41] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:02:41,963] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:02:41] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:13:10,744] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:13:10] "OPTIONS /passageiro?cpf=125456789-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:13:10,762] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:13:10] "DELETE /passageiro?cpf=125456789-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:20:51,527] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:20:51] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 09:20:51,550] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 09:20:51] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 11:22:23,607] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 11:22:23] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 11:22:23,636] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 11:22:23] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:55:47,347] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 133, in update_passageiro
+    count = session.query(Passageiro).filter(Passageiro.id == passageiro_id).update({'nome': passageiro_nome, 'cpf': passageiro_cpf, 'flight': passageiro_flight})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 3300, in update
+    result: CursorResult[Any] = self.session.execute(
+                                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/bulk_persistence.py", line 1648, in orm_execute_statement
+    return super().orm_execute_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: UPDATE passageiro SET nome=?, cpf=?, flight=? WHERE passageiro.pk_passageiro = ?]
+[parameters: ('Joao da Silva', '433.345.437-26', 'TAM-1234', 2)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-11 23:55:47,362] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:55:47] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
