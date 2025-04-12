@@ -1,87 +1,93 @@
-[2025-04-07 20:12:38,314] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:12:38] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:13:19,192] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py L875 
-Traceback (most recent call last):
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 40, in update_passageiro
-    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
-                                                                    ^^^^^^^^^^
-UnboundLocalError: cannot access local variable 'passageiro' where it is not associated with a value
-[2025-04-07 20:13:19,200] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:13:19] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:14:23,627] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py L875 
-Traceback (most recent call last):
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 40, in update_passageiro
-    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
-                                                                    ^^^^^^^^^^
-UnboundLocalError: cannot access local variable 'passageiro' where it is not associated with a value
-[2025-04-07 20:14:23,630] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:14:23] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:14:32,854] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py L875 
-Traceback (most recent call last):
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 40, in update_passageiro
-    logger.debug(f"Atualizando um passageiro de nome, cpf e peso: '{passageiro.nome}', '{passageiro.cpf}','{passageiro.peso}'")
-                                                                    ^^^^^^^^^^
-UnboundLocalError: cannot access local variable 'passageiro' where it is not associated with a value
-[2025-04-07 20:14:32,856] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:14:32] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:23,530] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+[2025-04-07 20:21:38,991] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:38] "GET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-07 20:21:39,089] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:39] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-07 20:23:02,478] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:23:02] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:34:55,772] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5001
  * Running on http://192.168.15.8:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:23,530] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:37,385] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:37] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:37,394] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:37] "GET /openapi/ HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:37,417] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:37] "GET /openapi/swagger/images/swagger.svg HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:38,979] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:38] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:38,990] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:38] "GET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-07 20:21:38,991] INFO _log() L97   127.0.0.1 - - [07/Apr/2025 20:21:38] "GET /openapi/swagger/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:34:55,773] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:35:09,169] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:35:09] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:35:09,176] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:35:09] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:35:09,214] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:35:09] "GET /openapi/ HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:35:09,232] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:35:09] "GET /openapi/swagger/images/swagger.svg HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:37:59,018] ERROR log_exception() L875  Exception on /passageiros [GET] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 84, in get_passageiros
+    return apresenta_passageiros(passageiros), 200
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/schemas/passageiro.py", line 47, in apresenta_passageiros
+    "flight": passageiro.flight,
+              ^^^^^^^^^^^^^^^^^
+AttributeError: 'Passageiro' object has no attribute 'flight'
+[2025-04-09 20:37:59,022] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:37:59] "[35m[1mGET /passageiros HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:38:20,849] ERROR log_exception() L875  Exception on /passageiro [POST] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 36, in add_passageiro
+    passageiro = Passageiro(
+                 ^^^^^^^^^^^
+TypeError: __init__() got an unexpected keyword argument 'flight'
+[2025-04-09 20:38:20,852] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:38:20] "[35m[1mPOST /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-09 20:41:34,362] ERROR log_exception() L875  Exception on /passageiros [GET] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+Traceback (most recent call last):
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask_openapi3/scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py", line 84, in get_passageiros
+    return apresenta_passageiros(passageiros), 200
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/schemas/passageiro.py", line 47, in apresenta_passageiros
+    "flight": passageiro.flight,
+              ^^^^^^^^^^^^^^^^^
+AttributeError: 'Passageiro' object has no attribute 'flight'
+[2025-04-09 20:41:34,364] INFO _log() L97   127.0.0.1 - - [09/Apr/2025 20:41:34] "[35m[1mGET /passageiros HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
