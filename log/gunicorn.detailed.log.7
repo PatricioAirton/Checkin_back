@@ -1,10 +1,10 @@
-[2025-04-11 23:08:37,424] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-11 23:09:49,157] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
     self.dialect.do_execute(
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: passageiro.cpf
+sqlite3.OperationalError: database is locked
 
 The above exception was the direct cause of the following exception:
 
@@ -65,8 +65,14 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: passageiro.cpf
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
 [SQL: UPDATE passageiro SET nome=?, cpf=?, flight=? WHERE passageiro.pk_passageiro = ?]
-[parameters: ('Joao da Silva', '111.222.333-01', 'TAM-1234', 4)]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-[2025-04-11 23:08:37,438] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:08:37] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[parameters: ('Joao da Silva', '233.234.235-01', 'TAM-1234', 4)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-11 23:09:49,167] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:09:49] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:11:53,416] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:11:53] "DELETE /passageiro?cpf=111.222.333-01 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:12:59,767] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:12:59] "GET /passageiro?cpf=233234235-01 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:16:37,492] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:16:37] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:19:20,281] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:19:20] "POST /contato HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:21:16,975] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:21:16] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:21:16,995] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:21:16] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  

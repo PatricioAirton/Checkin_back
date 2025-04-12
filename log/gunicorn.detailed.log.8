@@ -1,4 +1,4 @@
-[2025-04-11 22:46:59,866] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-11 23:08:37,424] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
     self.dialect.do_execute(
@@ -67,16 +67,6 @@ Traceback (most recent call last):
     cursor.execute(statement, parameters)
 sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: passageiro.cpf
 [SQL: UPDATE passageiro SET nome=?, cpf=?, flight=? WHERE passageiro.pk_passageiro = ?]
-[parameters: ('Joao da Silva', '433.345.437-26', 'TAM-1234', 1)]
+[parameters: ('Joao da Silva', '111.222.333-01', 'TAM-1234', 4)]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
-[2025-04-11 22:46:59,903] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:46:59] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 22:48:44,244] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:48:44] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 22:49:46,848] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:49:46] "OPTIONS /passageiro?cpf=076399657-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 22:49:46,865] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:49:46] "DELETE /passageiro?cpf=076399657-21 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 22:51:10,865] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 22:51:10] "DELETE /passageiro?cpf=433.345.437-26 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:03:54,853] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:03:54] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:04:54,362] WARNING update_passageiro() L145  Erro ao atualizar passageiro #'1', Passageiro não encontrado na base :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L145 
-[2025-04-11 23:04:54,363] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:04:54] "[33mPUT /passageiro HTTP/1.1[0m" 404 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:06:03,441] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:06:03] "PUT /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:07:23,909] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:07:23] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:07:23,919] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:07:23] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-11 23:08:37,438] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:08:37] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  

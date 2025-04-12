@@ -1,20 +1,10 @@
-[2025-04-11 23:49:10,816] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:49:10] "OPTIONS /passageiro?cpf=111.222.333-01 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:49:10,829] WARNING del_passageiro() L171  Erro ao deletar passageiro #'111.222.333-01', Passageiro não encontrado na base :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L171 
-[2025-04-11 23:49:10,830] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:49:10] "[33mDELETE /passageiro?cpf=111.222.333-01 HTTP/1.1[0m" 404 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:49:39,377] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:49:39] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:49:55,713] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:49:55] "GET /passageiros HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:51:13,631] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:51:13] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:51:13,644] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:51:13] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:51:39,488] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:51:39] "OPTIONS /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:51:39,502] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:51:39] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:53:00,701] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:53:00] "GET /passageiro?cpf=111.222.333.-09 HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
-[2025-04-11 23:55:04,472] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
+[2025-04-11 23:55:47,347] ERROR log_exception() L875  Exception on /passageiro [PUT] - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/flask/app.py L875 
 Traceback (most recent call last):
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
     self.dialect.do_execute(
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: passageiro.cpf
+sqlite3.OperationalError: database is locked
 
 The above exception was the direct cause of the following exception:
 
@@ -75,8 +65,25 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: passageiro.cpf
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
 [SQL: UPDATE passageiro SET nome=?, cpf=?, flight=? WHERE passageiro.pk_passageiro = ?]
-[parameters: ('Joao da Silva', '433.345.437-26', 'TAM-1234', 3)]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-[2025-04-11 23:55:04,488] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:55:04] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[parameters: ('Joao da Silva', '433.345.437-26', 'TAM-1234', 2)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-04-11 23:55:47,362] INFO _log() L97   127.0.0.1 - - [11/Apr/2025 23:55:47] "[35m[1mPUT /passageiro HTTP/1.1[0m" 500 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:14,607] INFO _log() L97   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.15.8:5001 - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:14,608] INFO _log() L97   [33mPress CTRL+C to quit[0m - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:37,938] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:37] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:37,947] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:37] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:37,957] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:37] "GET /openapi/ HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:37,971] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:37] "[36mGET /openapi/swagger/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:46,737] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:46] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:46,740] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:46] "[36mGET /openapi/swagger/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:46,741] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:46] "[36mGET /openapi/swagger/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:46,743] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:46] "[36mGET /openapi/swagger/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:28:46,878] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:28:46] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:32:50,022] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:32:50] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:34:38,851] INFO _log() L97   127.0.0.1 - - [12/Apr/2025 07:34:38] "POST /passageiro HTTP/1.1" 200 - - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/checkin/lib/python3.12/site-packages/werkzeug/_internal.py L97  
+[2025-04-12 07:34:38,947] WARNING add_passageiro() L58   Erro ao adicionar passageiro:'Patricio', '008782097-86', Passageiro de mesmo cpf já salvo na base :/ - call_trace=/Users/josepatricio/Desktop/MVP PUC/Checkin_eVTOL/Checkin_back/app.py L58  

@@ -91,7 +91,7 @@ def get_passageiros():
 @app.get('/passageiro', tags=[passageiro_tag],
          responses={"200": PassageiroViewSchema, "404": ErrorSchema})
 def get_passageiro(query: PassageiroBuscaSchema):
-    """Faz a busca por um Passageiro a partir do id do passageiro
+    """Faz a busca por um Passageiro a partir do cpf do passageiro
 
     Retorna uma representação dos passageiros e contatos associados.
     """
